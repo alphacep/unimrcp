@@ -180,6 +180,11 @@ UNI_PLUGIN_ENABLED(demorecog)
 
 AM_CONDITIONAL([DEMORECOG_PLUGIN],[test "${enable_demorecog_plugin}" = "yes"])
 
+dnl Kaldi recognizer plugin.
+UNI_PLUGIN_ENABLED(kaldirecog)
+
+AM_CONDITIONAL([KALDIRECOG_PLUGIN],[test "${enable_kaldirecog_plugin}" = "yes"])
+
 dnl Demo verifier plugin.
 UNI_PLUGIN_ENABLED(demoverifier)
 
@@ -219,6 +224,7 @@ AC_CONFIG_FILES([
     plugins/mrcp-recorder/Makefile
     plugins/demo-synth/Makefile
     plugins/demo-recog/Makefile
+    plugins/kaldi-recog/Makefile
     plugins/demo-verifier/Makefile
     platforms/Makefile
     platforms/libunimrcp-server/Makefile
@@ -269,6 +275,7 @@ echo UniMRCP server lib............ : $enable_server_lib
 echo UniMRCP server app............ : $enable_server_app
 echo
 echo Demo synthesizer plugin....... : $enable_demosynth_plugin
+echo Kaldi recognizer plugin....... : $enable_kaldirecog_plugin
 echo Demo recognizer plugin........ : $enable_demorecog_plugin
 echo Demo verifier plugin.......... : $enable_demoverifier_plugin
 echo Recorder plugin............... : $enable_recorder_plugin

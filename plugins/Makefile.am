@@ -6,6 +6,10 @@ if DEMOSYNTH_PLUGIN
 SUBDIRS               += demo-synth
 endif
 
+if KALDIRECOG_PLUGIN
+SUBDIRS               += kaldi-recog
+endif
+
 if DEMORECOG_PLUGIN
 SUBDIRS               += demo-recog
 endif
