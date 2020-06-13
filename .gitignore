@@ -296,6 +296,10 @@
 /plugins/demo-recog/Makefile.in
 /plugins/demo-recog/Makefile
 
+# /plugins/kaldi-recog
+plugins/kaldi-recog/Makefile
+plugins/kaldi-recog/Makefile.in
+
 # /plugins/demo-synth/
 /plugins/demo-synth/Debug
 /plugins/demo-synth/Release
