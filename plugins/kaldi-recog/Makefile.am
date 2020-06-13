@@ -34,7 +34,7 @@ KALDI_LIBS = \
 
 plugin_LTLIBRARIES         = kaldirecog.la
 
-kaldirecog_la_SOURCES       = src/kaldi_recog_engine.cc src/model.cc src/kaldi_recognizer.cc
+kaldirecog_la_SOURCES       = src/kaldi_recog_engine.cc src/model.cc src/kaldi_recognizer.cc src/spk_model.cc
 kaldirecog_la_LDFLAGS       = $(UNIMRCP_PLUGIN_OPTS) $(KALDI_LIBS)
 
 include $(top_srcdir)/build/rules/uniplugin.am

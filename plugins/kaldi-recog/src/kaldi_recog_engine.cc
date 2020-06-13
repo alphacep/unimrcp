@@ -161,7 +161,7 @@ MRCP_PLUGIN_DECLARE(mrcp_engine_t*) mrcp_plugin_create(apr_pool_t *pool)
 		vtable->process_msg = kaldi_recog_msg_process;
 	}
 
-	kaldi_engine->model = new Model();
+	kaldi_engine->model = new Model("/opt/kaldi/model");
 
 	/* create engine base */
 	return mrcp_engine_create(
@@ -181,7 +181,7 @@ static apt_bool_t kaldi_recog_engine_destroy(mrcp_engine_t *engine)
 		kaldi_engine->task = NULL;
 	}
 	if (kaldi_engine->model) {
-		delete kaldi_engine->model;
+		kaldi_engine->model->Unref();
 		kaldi_engine->model = NULL;
 	}
 	return TRUE;
@@ -317,7 +317,7 @@ static apt_bool_t kaldi_recog_channel_recognize(mrcp_engine_channel_t *channel, 
 	}
 	if(!recog_channel->recognizer) {
 		kaldi_recog_engine_t *kaldi_engine = recog_channel->kaldi_engine;
-		recog_channel->recognizer = new KaldiRecognizer(*kaldi_engine->model);
+		recog_channel->recognizer = new KaldiRecognizer(kaldi_engine->model, 8000.0f);
 	}
 
 	response->start_line.request_state = MRCP_REQUEST_STATE_INPROGRESS;
