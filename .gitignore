@@ -296,9 +296,9 @@
 /plugins/demo-recog/Makefile.in
 /plugins/demo-recog/Makefile
 
-# /plugins/kaldi-recog
-plugins/kaldi-recog/Makefile
-plugins/kaldi-recog/Makefile.in
+# /plugins/vosk-recog
+plugins/vosk-recog/Makefile
+plugins/vosk-recog/Makefile.in
 
 # /plugins/demo-synth/
 /plugins/demo-synth/Debug

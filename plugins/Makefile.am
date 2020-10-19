@@ -6,8 +6,8 @@ if DEMOSYNTH_PLUGIN
 SUBDIRS               += demo-synth
 endif
 
-if KALDIRECOG_PLUGIN
-SUBDIRS               += kaldi-recog
+if VOSKRECOG_PLUGIN
+SUBDIRS               += vosk-recog
 endif
 
 if DEMORECOG_PLUGIN

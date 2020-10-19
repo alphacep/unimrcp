@@ -217,6 +217,7 @@ static mrcp_engine_channel_t* kaldi_recog_engine_channel_create(mrcp_engine_t *e
 	/* create kaldi recog channel */
 	kaldi_recog_channel_t *recog_channel = (kaldi_recog_channel_t*)apr_palloc(pool,sizeof(kaldi_recog_channel_t));
 	recog_channel->kaldi_engine = (kaldi_recog_engine_t*)engine->obj;
+        recog_channel->recognizer = NULL;
 	recog_channel->recog_request = NULL;
 	recog_channel->stop_response = NULL;
 	recog_channel->detector = mpf_activity_detector_create(pool);

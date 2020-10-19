@@ -22,14 +22,14 @@ KALDI_LIBS = \
     $(KALDI_ROOT)/src/fstext/kaldi-fstext.a \
     $(KALDI_ROOT)/src/util/kaldi-util.a \
     $(KALDI_ROOT)/src/base/kaldi-base.a \
-    $(KALDI_ROOT)/tools/openfst/lib/libfst.a \
     $(KALDI_ROOT)/tools/openfst/lib/libfstngram.a \
+    $(KALDI_ROOT)/tools/openfst/lib/libfst.a \
     $(KALDI_ROOT)/tools/OpenBLAS/libopenblas.a \
     -lgfortran
 
-plugin_LTLIBRARIES         = kaldirecog.la
+plugin_LTLIBRARIES         = voskrecog.la
 
-kaldirecog_la_SOURCES       = src/kaldi_recog_engine.cc src/model.cc src/kaldi_recognizer.cc src/spk_model.cc
-kaldirecog_la_LDFLAGS       = $(UNIMRCP_PLUGIN_OPTS) $(KALDI_LIBS)
+voskrecog_la_SOURCES       = src/kaldi_recog_engine.cc src/model.cc src/kaldi_recognizer.cc src/spk_model.cc src/language_model.cc
+voskrecog_la_LDFLAGS       = $(UNIMRCP_PLUGIN_OPTS) -rdynamic $(KALDI_LIBS)
 
 include $(top_srcdir)/build/rules/uniplugin.am

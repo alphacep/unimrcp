@@ -111,7 +111,7 @@
 
     <!-- Factory of plugins (MRCP engines) -->
     <plugin-factory>
-      <engine id="Kaldi-Recog-1" name="kaldirecog" enable="true"/>
+      <engine id="Vosk-Recog-1" name="voskrecog" enable="true"/>
 
       <engine id="Demo-Synth-1" name="demosynth" enable="true"/>
       <engine id="Demo-Recog-1" name="demorecog" enable="false"/>
