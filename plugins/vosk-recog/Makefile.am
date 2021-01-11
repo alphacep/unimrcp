@@ -2,7 +2,7 @@ AM_CPPFLAGS                = $(UNIMRCP_PLUGIN_INCLUDES)
 
 KALDI_ROOT ?= $(HOME)/kaldi
 
-AM_CPPFLAGS += -std=c++11 -g -DPIC -fPIC -I$(KALDI_ROOT)/tools/openfst/include -I$(KALDI_ROOT)/src 
+AM_CPPFLAGS += -std=c++17 -g -O3 -DPIC -fPIC -I$(KALDI_ROOT)/tools/openfst/include -I$(KALDI_ROOT)/src 
 
 KALDI_LIBS = \
     $(KALDI_ROOT)/src/online2/kaldi-online2.a \
@@ -24,8 +24,11 @@ KALDI_LIBS = \
     $(KALDI_ROOT)/src/base/kaldi-base.a \
     $(KALDI_ROOT)/tools/openfst/lib/libfstngram.a \
     $(KALDI_ROOT)/tools/openfst/lib/libfst.a \
-    $(KALDI_ROOT)/tools/OpenBLAS/libopenblas.a \
-    -lgfortran
+    $(KALDI_ROOT)/tools/OpenBLAS/install/lib/libopenblas.a \
+    $(KALDI_ROOT)/tools/OpenBLAS/install/lib/libblas.a \
+    $(KALDI_ROOT)/tools/OpenBLAS/install/lib/liblapack.a \
+    $(KALDI_ROOT)/tools/OpenBLAS/install/lib/libf2c.a \
+    -latomic -lm -lpthread
 
 plugin_LTLIBRARIES         = voskrecog.la
 
