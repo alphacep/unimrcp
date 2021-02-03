@@ -25,8 +25,8 @@ KALDI_LIBS = \
     $(KALDI_ROOT)/tools/openfst/lib/libfstngram.a \
     $(KALDI_ROOT)/tools/openfst/lib/libfst.a \
     $(KALDI_ROOT)/tools/OpenBLAS/install/lib/libopenblas.a \
-    $(KALDI_ROOT)/tools/OpenBLAS/install/lib/libblas.a \
     $(KALDI_ROOT)/tools/OpenBLAS/install/lib/liblapack.a \
+    $(KALDI_ROOT)/tools/OpenBLAS/install/lib/libblas.a \
     $(KALDI_ROOT)/tools/OpenBLAS/install/lib/libf2c.a \
     -latomic -lm -lpthread
 
